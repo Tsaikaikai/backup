@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ImageProcessScanConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Update>0638079084422222929</Update>
+  <Version>ImageProcessScanConfig_20211117</Version>
+  <Name>Scan0</Name>
+  <ImageList>
+    <ScanSetting>
+      <Index>0</Index>
+      <SliceList>
+        <SliceSetting>
+          <Index>0</Index>
+          <Name />
+          <ZoneList>
+            <ZoneSetting>
+              <Index>-1</Index>
+              <StartX>-1</StartX>
+              <StartY>-1</StartY>
+              <EndX>-1</EndX>
+              <EndY>-1</EndY>
+              <OffsetX>0</OffsetX>
+              <OffsetY>0</OffsetY>
+              <Thresholds />
+              <CaptureEnable>
+                <boolean>true</boolean>
+              </CaptureEnable>
+              <PreProcessEnable>
+                <boolean>true</boolean>
+              </PreProcessEnable>
+              <PostProcessEnable>
+                <boolean>true</boolean>
+              </PostProcessEnable>
+              <PostProcedureIndex>
+                <string>0</string>
+              </PostProcedureIndex>
+            </ZoneSetting>
+          </ZoneList>
+        </SliceSetting>
+      </SliceList>
+    </ScanSetting>
+  </ImageList>
+</ImageProcessScanConfig>
