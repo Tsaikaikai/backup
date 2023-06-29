@@ -1,1 +1,0 @@
-python main.py  --image_folder_path=D:\\auo\\KinsusAutoAOI\\Work_images\\AOIID\\f66-m10-15\\2-J\\20220519\\20220519004 --model_path=D:\\kinsus_AOI\\py\\AoiGrayModel_ver1_3.onnx --unknown_threshold=0.9 --csv_name=20230621_141544_0
