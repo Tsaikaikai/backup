@@ -111,7 +111,7 @@ class Camera:
     def _restart(self):
         pwd = "robot"
         cmd = "uhubctl -l 1 -p 1 -a 2"
-        call('echo {} | sudo -S {}'.format(pwd, cmd),shell=True)        
+        call('echo {} | sudo -S {}'.format(pwd, cmd),shell=True)
         time.sleep(1.2)
 
     def _distortion(self, img):
