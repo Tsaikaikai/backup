@@ -125,12 +125,13 @@ namespace AIF_2D_AOI
 
         public bool DoAutoAlignment(Mat SrcImage, Mat CprImage, ref Mat AlignSrcImage, ref Mat AlignCprImage, ref PatternMatchResult AlignResult)
         {
-            List<Rect> allAignRegion = new List<Rect>();
+            List<Rect> allPatternRegion = new List<Rect>();
             Rect patternCropRoi = new Rect();
             List<PatternMatchResult> resultList = new List<PatternMatchResult>();
             Mat rotateCprImage = new Mat();
             Mat copySrcImage = new Mat(); 
             Mat copyCprImage = new Mat();
+            Mat patternImage = new Mat();
             int patternCenterX = 0;
             int patternCenterY = 0;
 
@@ -139,27 +140,35 @@ namespace AIF_2D_AOI
                 copySrcImage = SrcImage.Clone();
                 copyCprImage = CprImage.Clone();
 
-                allAignRegion = GetAlignRegion(copySrcImage.Width, copySrcImage.Height);
+                allPatternRegion = GetAlignRegion(copySrcImage.Width, copySrcImage.Height);
 
-                for (int i = 0; i < allAignRegion.Count(); i++)
+                for (int i = 0; i < allPatternRegion.Count(); i++)
                 {
                     Rect alignSrcCropRegion = new Rect(Config.Buffer, 
                                                        Config.Buffer, 
                                                        SrcImage.Width - Config.Buffer * 2,
                                                        SrcImage.Height - Config.Buffer * 2);
 
-                    AlignSrcImage = CropImage(copySrcImage, alignSrcCropRegion);
+                    Rect patternSrcCropRegion = allPatternRegion[i];
 
-                    if (FastPatternMatch(AlignSrcImage, copyCprImage, ref resultList))
+
+                    AlignSrcImage = CropImage(copySrcImage, alignSrcCropRegion);
+                    patternImage = CropImage(copySrcImage, patternSrcCropRegion);
+
+                    if (FastPatternMatch(patternImage, copyCprImage, ref resultList))
                     {
-                        patternCropRoi = allAignRegion[i];
+                        patternCropRoi = allPatternRegion[i];
                         patternCenterX = Convert.ToInt32(patternCropRoi.X + patternCropRoi.Width / 2);
                         patternCenterY = Convert.ToInt32(patternCropRoi.Y + patternCropRoi.Height / 2);
                     }
 
                     if (resultList.Count != 1)
                     {
-                        throw new Exception("Fast pattern match fail.");
+                        if (i == allPatternRegion.Count() - 1)
+                        {
+                            throw new Exception("Align Fail. No match any region.");
+                        }
+                        else continue;
                     }
 
                     AlignResult = resultList[0];
@@ -178,7 +187,7 @@ namespace AIF_2D_AOI
 
                     if (AlignCprImage == null)
                     {
-                        if (i == allAignRegion.Count() - 1)
+                        if (i == allPatternRegion.Count() - 1)
                         {
                             throw new Exception("Align Fail. No match any region.");
                         }
@@ -198,6 +207,7 @@ namespace AIF_2D_AOI
                 resultList?.Clear();
                 copySrcImage.Dispose();
                 copyCprImage.Dispose();
+                patternImage.Dispose();
             }
         }
 
