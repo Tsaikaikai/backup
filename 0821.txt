@@ -4,5 +4,5 @@ https://stackoverflow.com/questions/63691809/does-nvidia-docker-need-cuda-instal
 
 請使用以下憑證開始工作階段。TeamViewer ID：688 742 114 密碼：7kuyyshc
 
-Meeting number (access code): 2510 4752 931 
-Meeting password: 682357
+Meeting number (access code): 2511 5251 796
+Meeting password: 245683
