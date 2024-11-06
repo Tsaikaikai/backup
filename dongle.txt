@@ -1,0 +1,12 @@
+https://pronewo365-my.sharepoint.com/:u:/g/personal/userc_pronew_pronewo365_onmicrosoft_com/ESpLVc3uYRpNkqW7Al08LMMBUus_05Amdq5JNsfXER1mrw?e=8kUkRv
+
+龔先生您好
+
+請參考以下步驟下載與安裝PRONEW Toolkit:
+步驟1.下載與安裝 PRONEW Toolkit 10.0 demo版:
+https://pronewo365-my.sharepoint.com/:u:/g/personal/userc_pronew_pronewo365_onmicrosoft_com/ESpLVc3uYRpNkqW7Al08LMMBUus_05Amdq5JNsfXER1mrw?e=8kUkRv
+步驟2.安裝好之後請將附件三個檔案(lservrc、Toolkit.lic、Toolkit.ini)複製到C:\Program Files (x86)\PRONEW HASP Toolkit\VendorSuite 資料夾內
+步驟3.執行PRONEW Toolkit，點左邊"設定"，再點右邊的"Master Wizard"按鈕後會執行一個"Log In Sentinel EMS"視窗，在這個視窗內請點"Skip Login"按鈕，接下來點"API Libraries 10.11.7.."選項(點這個選項可以與舊版本相容)，再點兩個"Next"按鈕會開始下載專用的程式庫與產生vendor code，下載時間大約十幾分鐘左右，如果有錯誤請嘗試一小時後再執行一次Master Wizard
+步驟4.Master wizard執行完成後重新執行PRONEW Toolkit 即可正常操作
+
+備註:要燒錄Key時請確認"設定">"使用Vendor Code檔"欄位設定的.hvc檔與要燒錄的HL Batch code是否一致
