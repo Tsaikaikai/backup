@@ -1,1 +1,30 @@
-https://advantecho365-my.sharepoint.com/:u:/g/personal/tiffany_shih_advantech_com/EYmvW02P_ulKjtOczl-2_JsBYLTDNl34MxkPwnWqo1Q_bQ?e=q3daiW
+Synopsis
+Find a pattern matching model(s) in the target image buffer. 
+Syntax
+void MpatFind(
+MIL_ID ContextPatId,  //in  
+MIL_ID TargetImageBufId,  //in  
+MIL_ID ResultPatId  //in  
+) 
+  Description 
+This function searches for the model(s) defined in the specified Pattern Matching context and writes the results in the provided result buffer. Note, the Pattern Matching context must be preprocessed (using MpatPreprocess()) before calling this function. 
+
+Use MpatControl() to configure the find operation before calling this function. 
+
+When there is more than one model, select the appropriate search mode using M_SEARCH_MODE. When the search mode is set to M_FIND_BEST_MODELS, the search settings of the first model apply for the search of all models; otherwise, when using M_FIND_ALL_MODELS, the find operation searches for all models using their own search settings. Regardless of the search mode selected, all models must be of the same size. 
+
+To specify the maximum number of occurrences for which to look in the target image, use MpatControl() with M_NUMBER. Note that this control type can also be used to temporarily ignore a model during a find operation, by setting M_NUMBER to zero. When using the M_FIND_BEST_MODELS search mode, if M_NUMBER is set to the zero for the first model, the subsequent model that does not have its M_NUMBER set to zero will be used instead. 
+
+When the model's reference position is expected to be found in a certain region, you can specify this region using MpatControl() with M_SEARCH_OFFSET_X, M_SEARCH_OFFSET_Y, M_SEARCH_SIZE_X, and M_SEARCH_SIZE_Y. Note that, since you are setting the area in which to find the model's reference position, the search region can be smaller than the model. An alternative method to limiting your search region is to use a rectangular region of interest (ROI), set using MbufSetRegion(). This might cause an increase in processing time, but it is more flexible than setting a search region using MpatControl(); this is because you can define a search region in world units and set it at angle. If using an ROI, the values of M_SEARCH_OFFSET... and M_SEARCH_SIZE... are ignored and the ROI settings take precedence. 
+
+Do not use a child buffer to restrict the search region. Using a child buffer could result in edge effects from overscan pixels or incomplete neighborhoods. If the search region is as small as or smaller than the model, using a child buffer could produce invalid results. 
+
+To reset the search region size to the full image when using the control types to define the region, set M_SEARCH_OFFSET_X and M_SEARCH_OFFSET_Y to zero (0), and M_SEARCH_SIZE_X and M_SEARCH_SIZE_Y to M_ALL. 
+
+This function assumes that the model was extracted from a source image with the same scaling as the target image. In addition, if angular search is disabled (M_SEARCH_ANGLE_MODE is set to M_DISABLE), the model's source image and the target image must have the same orientation (with approximately 5° tolerance). To perform an angular search, use MpatControl() to enable the angular search and then use M_SEARCH_ANGLE... to set the nominal search angle and the angular search range of the model. 
+
+This function returns results in decreasing match-score order. This means that the most-likely occurrence is always returned first. 
+
+If a correlation has a match score greater than or equal to the certainty level (MpatControl() with M_CERTAINTY), it is automatically considered an occurrence (default 80%). The remaining occurrences will be the best of those greater than or equal to the acceptance level (MpatControl() with M_ACCEPTANCE). 
+
+Results are written to the specified result buffer. Use the MpatGetResult() to read the results. 
