@@ -28,3 +28,115 @@ This function returns results in decreasing match-score order. This means that t
 If a correlation has a match score greater than or equal to the certainty level (MpatControl() with M_CERTAINTY), it is automatically considered an occurrence (default 80%). The remaining occurrences will be the best of those greater than or equal to the acceptance level (MpatControl() with M_ACCEPTANCE). 
 
 Results are written to the specified result buffer. Use the MpatGetResult() to read the results. 
+
+void CoreProcessor::AlignMatch(
+	MIL_ID input,
+	String ^ path,
+	double threshold,
+	bool edgeMode,
+	bool angleMode,
+	double & x,
+	double & y,
+	double & angle,
+	bool & state,
+	double& score)
+{
+	MIL_ID imageInput = this->GetZoneImage(input);
+	MIL_ID searchZone = this->NewZoneImage(input);
+
+	MIL_ID golden;
+	MIL_ID marker;
+	MIL_ID result;
+
+	try
+	{
+		state = false;
+		if (threshold < 0) threshold = 0;
+		if (threshold > 100) threshold = 100;
+
+		if (!File::Exists(path)) return;
+
+		char * tmpPath;
+		IntPtr tmpString = Marshal::StringToHGlobalAnsi(path);
+		tmpPath = (char *)tmpString.ToPointer();
+		MbufRestore(tmpPath, this->milSystem, &golden);
+		Marshal::FreeHGlobal(tmpString);
+
+		if (edgeMode)
+		{
+			MimConvolve(golden, golden, M_EDGE_DETECT_SOBEL_FAST);
+		}
+
+		// Allocate a normalized pattern matching context.
+		marker = MpatAlloc(this->milSystem, M_NORMALIZED, M_DEFAULT, M_NULL);
+
+		// Define a regular model.
+		MpatDefine(
+			marker,
+			M_REGULAR_MODEL,
+			golden,
+			M_DEFAULT,
+			M_DEFAULT,
+			M_DEFAULT,
+			M_DEFAULT,
+			M_DEFAULT);
+		MpatControl(marker, M_DEFAULT, M_CERTAINTY, 30);
+		MpatControl(marker, M_DEFAULT, M_ACCEPTANCE, threshold);
+
+		if (angleMode)
+		{
+			MpatControl(marker, M_DEFAULT, M_SEARCH_ANGLE_MODE, M_ENABLE);
+			MpatControl(marker, M_DEFAULT, M_SEARCH_ANGLE_DELTA_NEG, 10);
+			MpatControl(marker, M_DEFAULT, M_SEARCH_ANGLE_DELTA_POS, 10);
+			MpatControl(marker, M_DEFAULT, M_SEARCH_ANGLE_ACCURACY, 0.25);
+			MpatControl(marker, M_DEFAULT, M_SEARCH_ANGLE_INTERPOLATION_MODE, M_BILINEAR);
+		}
+
+		MpatPreprocess(marker, M_DEFAULT, golden);
+
+		// Define search zone
+		if (edgeMode)
+		{
+			MimConvolve(imageInput, searchZone, M_EDGE_DETECT_SOBEL_FAST);
+		}
+		else
+		{
+			MbufCopy(imageInput, searchZone);
+		}
+
+		// Allocate result
+		MpatAllocResult(this->milSystem, M_DEFAULT, &result);
+
+		// Find pattern
+		MpatFind(marker, searchZone, result);
+
+		// Get result
+		MIL_INT number;
+		MpatGetResult(result, M_DEFAULT, M_NUMBER + M_TYPE_MIL_INT, &number);
+
+		if (number > 0)
+		{
+			MpatGetResult(result, M_DEFAULT, M_POSITION_X, &x);
+			MpatGetResult(result, M_DEFAULT, M_POSITION_Y, &y);
+			MpatGetResult(result, M_DEFAULT, M_ANGLE, &angle);
+			MpatGetResult(result, M_DEFAULT, M_SCORE, &score);
+
+			state = true;
+		}
+		else
+		{
+			x = 0;
+			y = 0;
+			angle = 0;
+			score = -1;
+		}
+	}
+	finally
+	{
+		if (imageInput) MbufFree(imageInput);
+		if (searchZone) MbufFree(searchZone);
+		if (golden) MbufFree(golden);
+		if (marker) MpatFree(marker);
+		if (result) MpatFree(result);
+	}
+}
