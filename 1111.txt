@@ -3,3 +3,4 @@
    於 Wafer_Inline_System.ClsAlgorithm.DoAlignment(HObject[] SourceImageArr, HObject& AlignedImage, HObject& LineScanNotchImage, Int32& NotchLocate, HTuple& CropRows, HTuple& CropCols) 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\Class\Algorithm\ClsAlgorithm.cs: 行 78
    於 Wafer_Inline_System.MCenter.<>c__DisplayClass258_0.<RunInspect>b__1() 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\MCenter.cs: 行 1817
    於 System.Threading.Tasks.Task.Execute()]
+https://nas.aiwin.com.tw:5002/sharing/aD4kkbxLe
