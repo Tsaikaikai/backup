@@ -1,7 +1,0 @@
-2025/01/07, 16:04:49:7843 - [Center][FF12-D032300-0647][檢測異常][Alignment Fail.HALCON error #1402: Wrong number of values of control parameter 2 in operator gen_cross_contour_xld][System.Exception: Alignment Fail.HALCON error #1402: Wrong number of values of control parameter 2 in operator gen_cross_contour_xld
-   於 MeasureWaferRecipe.SalmonAlgorithm.DoAlignment(HObject[] SourceImageArr, HObject& AlignedImage, HObject& LineScanNotchImage, Int32& NotchLocate, HTuple& CropRows, HTuple& CropCols) 於 D:\Mick\Wafer_Inline_System1126\MeasureWaferRecipe_241025\MeasureWaferRecipe\SalmonAlgorithm.cs: 行 257
-   於 Wafer_Inline_System.ClsAlgorithm.DoAlignment(HObject[] SourceImageArr, HObject& AlignedImage, HObject& LineScanNotchImage, Int32& NotchLocate, HTuple& CropRows, HTuple& CropCols) 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\Class\Algorithm\ClsAlgorithm.cs: 行 78
-   於 Wafer_Inline_System.MCenter.<>c__DisplayClass258_0.<RunInspect>b__1() 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\MCenter.cs: 行 1817
-   於 System.Threading.Tasks.Task.Execute()]
-https://nas.aiwin.com.tw:5002/sharing/aD4kkbxLe
-https://drive.google.com/file/d/1JGNlDknYX8N3rkH-7c4hzRUoOX3N4NfY/view?usp=sharing
