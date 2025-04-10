@@ -1,3 +1,2 @@
-https://advantecho365-my.sharepoint.com/:u:/g/personal/tiffany_shih_advantech_com/EYmvW02P_ulKjtOczl-2_JsBYLTDNl34MxkPwnWqo1Q_bQ?e=q3daiW
-https://nas.aiwin.com.tw:5002/sharing/RLPHf4dYw
-https://docs.google.com/spreadsheets/d/1w31XkNJIq5KLpjlfpzDwBMdKqlVjDPLm0kYpAVW4fhE/edit?usp=sharing
+https://gitcode.com/open-source-toolkit/b5d63/?utm_source=tools_gitcode&index=bottom&type=card&
+發生一個偶發的錯誤在 this->ZoneList[cnt]->CheckValue(tmpConfig->ZoneList[cnt]); 錯誤顯示索引超出邊界，在發生當下使用debug模式排查發現，發生的當下tmpConfig->ZoneList長度為0，但 this->ZoneList的長度為3，可能的原因為何?
