@@ -34,7 +34,10 @@ void TaskManager::FinishTask(TaskData ^ task)
 		}
 	}
 	if (index == -1) return;
-
+    	// 添加安全检查
+   	if (index == -1 || index >= this->taskList->Count) 
+            return;
 	this->taskList->RemoveAt(index);
 }
+
 
