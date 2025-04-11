@@ -1,2 +1,20 @@
 https://gitcode.com/open-source-toolkit/b5d63/?utm_source=tools_gitcode&index=bottom&type=card&
 發生一個偶發的錯誤在 this->ZoneList[cnt]->CheckValue(tmpConfig->ZoneList[cnt]); 錯誤顯示索引超出邊界，在發生當下使用debug模式排查發現，發生的當下tmpConfig->ZoneList長度為0，但 this->ZoneList的長度為3，可能的原因為何?
+void SliceSetting::CheckValue(SliceSetting ^ tmpConfig)
+{
+    this->Name = tmpConfig->Name;
+
+    // 首先调整大小
+    if (tmpConfig->ZoneList->Length > 0)
+        Array::Resize(this->ZoneList, tmpConfig->ZoneList->Length);
+    
+    // 使用tmpConfig->ZoneList->Length作为循环条件
+    for (int cnt = 0; cnt < tmpConfig->ZoneList->Length; cnt++)
+    {
+        if (!this->ZoneList[cnt])
+            this->ZoneList[cnt] = gcnew ZoneSetting();
+
+        this->ZoneList[cnt]->CheckValue(tmpConfig->ZoneList[cnt]);
+        this->ZoneList[cnt]->Index = cnt;
+    }
+}
