@@ -18,3 +18,23 @@ void SliceSetting::CheckValue(SliceSetting ^ tmpConfig)
         this->ZoneList[cnt]->Index = cnt;
     }
 }
+
+void TaskManager::FinishTask(TaskData ^ task)
+{
+	int index = -1;
+
+	for (int cnt = 0; cnt < this->taskList->Count; cnt++)
+	{
+		TaskData ^ temp = (TaskData ^) this->taskList[cnt];
+
+		if (temp->Index == task->Index)
+		{
+			index = cnt;
+			break;
+		}
+	}
+	if (index == -1) return;
+
+	this->taskList->RemoveAt(index);
+}
+
