@@ -1,4 +1,4 @@
-public static int ProcessAndCropImage(string inputPath, string outputDir, int threshold, int windowSize, double overlap, int downScale, double maxAllowedOverlap = 0.5)
+public static int ProcessAndCropImage(string inputPath, string outputDir, int threshold, int windowSize, int moveStep, int downScale)
 {
     Mat oriImg = new Mat();
     Mat img = new Mat();
@@ -10,8 +10,6 @@ public static int ProcessAndCropImage(string inputPath, string outputDir, int th
     Mat remask = new Mat();
     Mat labels = new Mat(), stats = new Mat(), centroids = new Mat();
     Mat edges = new Mat();
-    Mat cutRegionsMask = null;  // 用來記錄已切割的區域
-    
     try
     {
         // 讀取圖片
@@ -74,93 +72,138 @@ public static int ProcessAndCropImage(string inputPath, string outputDir, int th
         edges = largestComponent.Canny(100, 200);
         largestComponent.Dispose();
 
-        // 計算滑動窗口的步長（基於重疊率）
-        int stride = (int)(windowSize * (1 - overlap));
-
         // 獲取圖像尺寸
         int height = edges.Rows;
         int width = edges.Cols;
         int count = 0;
         Mat drawMap = img.Clone();
-        
-        // 創建一個遮罩來記錄已經切割的區域
-        cutRegionsMask = Mat.Zeros(oriGray.Size(), MatType.CV_8UC1);
 
-        for (int y = 0; y <= height - windowSize; y += stride)
+        // 找到所有邊緣像素點
+        Mat nonZeroCoords = edges.FindNonZero();
+        if (nonZeroCoords == null || nonZeroCoords.Rows == 0)
         {
-            for (int x = 0; x <= width - windowSize; x += stride)
+            return 0; // 沒有找到邊緣
+        }
+
+        // 將邊緣像素點轉換為列表
+        List<Point> edgePoints = new List<Point>();
+        for (int i = 0; i < nonZeroCoords.Rows; i++)
+        {
+            edgePoints.Add(nonZeroCoords.At<Point>(i));
+        }
+        nonZeroCoords.Dispose();
+
+        // 按x座標排序
+        edgePoints.Sort((p1, p2) => p1.X.CompareTo(p2.X));
+
+        // 計算邊緣的最小和最大x座標
+        int minX = edgePoints.First().X;
+        int maxX = edgePoints.Last().X;
+
+        // 初始化已處理的點集合
+        HashSet<string> processedAreas = new HashSet<string>();
+
+        // 沿著邊緣每隔moveStep選取一個點作為窗口中心
+        for (int x = minX; x <= maxX; x += moveStep)
+        {
+            // 找出所有x座標等於當前x的邊緣點
+            var pointsAtX = edgePoints.Where(p => p.X == x).ToList();
+            if (pointsAtX.Count == 0)
+                continue;
+
+            // 對於每個x座標的點，提取窗口
+            foreach (var point in pointsAtX)
             {
-                // 提取當前窗口
-                Rect windowRect = new Rect(x, y, windowSize, windowSize);
-                Mat window = new Mat(edges, windowRect);
-                Mat nonZeroCoords = window.FindNonZero();
-                window.Dispose();
+                // 計算窗口的起始位置
+                int startY = Math.Max(0, Math.Min(point.Y - windowSize / 2, height - windowSize));
+                int startX = Math.Max(0, Math.Min(point.X - windowSize / 2, width - windowSize));
 
-                if (nonZeroCoords != null && nonZeroCoords.Rows > 0)
+                // 生成區域識別碼
+                string areaKey = $"{startX / (windowSize / 4)},{startY / (windowSize / 4)}";
+
+                // 避免重複處理相近區域
+                if (processedAreas.Contains(areaKey))
+                    continue;
+
+                processedAreas.Add(areaKey);
+
+                // 裁剪原始灰度圖
+                Rect cropRect = new Rect(startX, startY, windowSize, windowSize);
+                Mat crop = new Mat(oriGray, cropRect);
+
+                // 繪製裁剪位置
+                Point topleft = new Point((int)(startX / downScale), (int)startY / downScale);
+                Point btmright = new Point((int)(startX / downScale + windowSize / downScale), (int)(startY / downScale + windowSize / downScale));
+                Cv2.Rectangle(drawMap, topleft, btmright, new Scalar(0, 0, 255), 2);
+
+                // 保存裁剪圖片
+                string timestamp = GetTimestamp();
+                string name = Path.GetFileNameWithoutExtension(inputPath);
+                string outputPath = Path.Combine(outputDir, $"{name}{timestamp}.png");
+                ImageEncodingParam[] Params = new ImageEncodingParam[]
                 {
-                    int sumX = 0, sumY = 0;
+                    new ImageEncodingParam(ImwriteFlags.PngCompression, 0)
+                };
 
-                    for (int i = 0; i < nonZeroCoords.Rows; i++)
-                    {
-                        var point = nonZeroCoords.At<Point>(i);
-                        sumX += point.X;
-                        sumY += point.Y;
-                    }
-
-                    // Calculate the center of the edge pixels
-                    int centerX = sumX / nonZeroCoords.Rows;
-                    int centerY = sumY / nonZeroCoords.Rows;
-
-                    // Adjust the starting coordinates for cropping
-                    int startY = Math.Max(0, Math.Min(y + centerY - windowSize / 2, height - windowSize));
-                    int startX = Math.Max(0, Math.Min(x + centerX - windowSize / 2, width - windowSize));
-
-                    // Crop the original grayscale image
-                    Rect cropRect = new Rect(startX, startY, windowSize, windowSize);
-                    
-                    // 檢查與已切割區域的重疊度
-                    Mat regionOfInterest = new Mat(cutRegionsMask, cropRect);
-                    int nonZeroPixels = Cv2.CountNonZero(regionOfInterest);
-                    double overlapRatio = (double)nonZeroPixels / (windowSize * windowSize);
-                    regionOfInterest.Dispose();
-                    
-                    // 只有當重疊度低於閾值時才保留
-                    if (overlapRatio <= maxAllowedOverlap)
-                    {
-                        Mat crop = new Mat(oriGray, cropRect);
-
-                        // 更新已切割區域的遮罩
-                        Mat roi = new Mat(cutRegionsMask, cropRect);
-                        roi.SetTo(new Scalar(255));
-                        roi.Dispose();
-
-                        // draw crop location
-                        Point topleft = new Point((int)(startX / downScale), (int)startY / downScale);
-                        Point btmright = new Point((int)(startX / downScale + windowSize / downScale), (int)(startY / downScale + windowSize / downScale));
-                        Cv2.Rectangle(drawMap, topleft, btmright, new Scalar(0, 0, 255), 2);
-
-                        // Save the cropped image with a unique timestamp
-                        string timestamp = GetTimestamp();
-                        string name = Path.GetFileNameWithoutExtension(inputPath);
-                        string outputPath = Path.Combine(outputDir, $"{name}{timestamp}.png");
-                        ImageEncodingParam[] Params = new ImageEncodingParam[]
-                        {
-                            new ImageEncodingParam(ImwriteFlags.PngCompression, 0)
-                        };
-
-                        Cv2.ImWrite(outputPath, crop, Params);
-                        crop.Dispose();
-                        count++;
-                    }
-                }
-                nonZeroCoords.Dispose();
+                Cv2.ImWrite(outputPath, crop, Params);
+                crop.Dispose();
+                count++;
             }
         }
+
+        // 另外處理y方向的邊緣
+        edgePoints.Sort((p1, p2) => p1.Y.CompareTo(p2.Y));
+        int minY = edgePoints.First().Y;
+        int maxY = edgePoints.Last().Y;
+
+        for (int y = minY; y <= maxY; y += moveStep)
+        {
+            // 找出所有y座標等於當前y的邊緣點
+            var pointsAtY = edgePoints.Where(p => p.Y == y).ToList();
+            if (pointsAtY.Count == 0)
+                continue;
+
+            // 對於每個y座標的點，提取窗口
+            foreach (var point in pointsAtY)
+            {
+                // 計算窗口的起始位置
+                int startY = Math.Max(0, Math.Min(point.Y - windowSize / 2, height - windowSize));
+                int startX = Math.Max(0, Math.Min(point.X - windowSize / 2, width - windowSize));
+
+                // 生成區域識別碼
+                string areaKey = $"{startX / (windowSize / 4)},{startY / (windowSize / 4)}";
+
+                // 避免重複處理相近區域
+                if (processedAreas.Contains(areaKey))
+                    continue;
+
+                processedAreas.Add(areaKey);
+
+                // 裁剪原始灰度圖
+                Rect cropRect = new Rect(startX, startY, windowSize, windowSize);
+                Mat crop = new Mat(oriGray, cropRect);
+
+                // 繪製裁剪位置
+                Point topleft = new Point((int)(startX / downScale), (int)startY / downScale);
+                Point btmright = new Point((int)(startX / downScale + windowSize / downScale), (int)(startY / downScale + windowSize / downScale));
+                Cv2.Rectangle(drawMap, topleft, btmright, new Scalar(0, 0, 255), 2);
+
+                // 保存裁剪圖片
+                string timestamp = GetTimestamp();
+                string name = Path.GetFileNameWithoutExtension(inputPath);
+                string outputPath = Path.Combine(outputDir, $"{name}{timestamp}.png");
+                ImageEncodingParam[] Params = new ImageEncodingParam[]
+                {
+                    new ImageEncodingParam(ImwriteFlags.PngCompression, 0)
+                };
+
+                Cv2.ImWrite(outputPath, crop, Params);
+                crop.Dispose();
+                count++;
+            }
+        }
+
         Cv2.ImWrite(outputDir + Path.GetFileNameWithoutExtension(inputPath) + "_ROImap.png", drawMap);
-        
-        // 輸出最終的切割區域遮罩，方便調試
-        Cv2.ImWrite(outputDir + Path.GetFileNameWithoutExtension(inputPath) + "_regions_mask.png", cutRegionsMask);
-        
         return count;
     }
     catch (Exception ex)
@@ -181,7 +224,6 @@ public static int ProcessAndCropImage(string inputPath, string outputDir, int th
         stats.Dispose();
         centroids.Dispose();
         edges.Dispose();
-        if (cutRegionsMask != null) cutRegionsMask.Dispose();
         GC.Collect();
         GC.WaitForPendingFinalizers();
     }
