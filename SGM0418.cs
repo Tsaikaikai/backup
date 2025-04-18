@@ -1,4 +1,4 @@
-public static int ProcessAndCropImage(string inputPath, string outputDir, int threshold, int windowSize, double overlap, int downScale)
+public static List<Mat> ProcessAndCropImage(string inputPath, string outputDir, int threshold, int windowSize, double overlap, int downScale)
 {
     Mat oriImg = new Mat();
     Mat img = new Mat();
@@ -10,6 +10,8 @@ public static int ProcessAndCropImage(string inputPath, string outputDir, int th
     Mat remask = new Mat();
     Mat labels = new Mat(), stats = new Mat(), centroids = new Mat();
     Mat edges = new Mat();
+    List<Mat> croppedImages = new List<Mat>();
+    
     try
     {
         // 讀取圖片
@@ -70,94 +72,87 @@ public static int ProcessAndCropImage(string inputPath, string outputDir, int th
 
         // 邊緣檢測
         edges = largestComponent.Canny(100, 200);
+        largestComponent.Dispose();
         
-        // 找到所有輪廓
-        Point[][] contours;
-        HierarchyIndex[] hierarchy;
-        Cv2.FindContours(edges, out contours, out hierarchy, RetrievalModes.External, ContourApproximationModes.ApproxSimple);
+        // 找到所有邊緣點
+        Mat nonZeroCoords = edges.FindNonZero();
         
-        // 找到最大輪廓
-        int maxContourIdx = 0;
-        double maxContourArea = 0;
-        for (int i = 0; i < contours.Length; i++)
+        // 如果沒有找到邊緣點，則退出
+        if (nonZeroCoords == null || nonZeroCoords.Rows == 0)
         {
-            double area = Cv2.ContourArea(contours[i]);
-            if (area > maxContourArea)
-            {
-                maxContourArea = area;
-                maxContourIdx = i;
-            }
+            throw new Exception("未檢測到邊緣");
         }
         
-        // 計算沿著輪廓的固定距離
-        int contourDistance = (int)(windowSize * (1 - overlap));
+        // 計算沿著邊緣的固定距離間隔
+        int stepDistance = (int)(windowSize * (1 - overlap));
+        
+        // 將邊緣點轉換為列表以便處理
+        List<Point> edgePoints = new List<Point>();
+        for (int i = 0; i < nonZeroCoords.Rows; i++)
+        {
+            edgePoints.Add(nonZeroCoords.At<Point>(i));
+        }
+        
+        // 對邊緣點進行排序
+        edgePoints = edgePoints.OrderBy(p => p.X).ThenBy(p => p.Y).ToList();
         
         Mat drawMap = img.Clone();
-        int count = 0;
         
-        // 確保有輪廓可用
-        if (contours.Length > 0)
+        // 採樣點的列表，確保點之間的距離大於等於stepDistance
+        List<Point> sampledPoints = new List<Point>();
+        Point lastPoint = new Point(-1000, -1000); // 初始一個遠離所有可能點的位置
+        
+        foreach (Point edgePoint in edgePoints)
         {
-            Point[] maxContour = contours[maxContourIdx];
+            // 計算與上一個選中點的距離
+            double distance = Math.Sqrt(Math.Pow(edgePoint.X - lastPoint.X, 2) + Math.Pow(edgePoint.Y - lastPoint.Y, 2));
             
-            // 計算沿輪廓的總長度
-            double contourLength = Cv2.ArcLength(maxContour, true);
-            
-            // 計算需要採樣的點數
-            int numSamples = Math.Max(1, (int)(contourLength / contourDistance));
-            
-            // 遍歷輪廓上的等距離點
-            for (int i = 0; i < numSamples; i++)
+            // 如果距離大於步長，則選取該點
+            if (distance >= stepDistance)
             {
-                // 計算當前點在輪廓上的位置
-                int idx = (int)((i * 1.0 / numSamples) * maxContour.Length);
-                if (idx >= maxContour.Length) idx = maxContour.Length - 1;
-                
-                Point contourPoint = maxContour[idx];
-                
-                // 縮放回原始圖片大小
-                int origX = contourPoint.X * downScale;
-                int origY = contourPoint.Y * downScale;
-                
-                // 計算裁切區域
-                int startX = Math.Max(0, origX - windowSize / 2);
-                int startY = Math.Max(0, origY - windowSize / 2);
-                
-                // 確保不超出圖片範圍
-                if (startX + windowSize > oriImg.Width)
-                    startX = oriImg.Width - windowSize;
-                if (startY + windowSize > oriImg.Height)
-                    startY = oriImg.Height - windowSize;
-                
-                // 裁切原始灰度圖
-                Rect cropRect = new Rect(startX, startY, windowSize, windowSize);
-                Mat crop = new Mat(oriGray, cropRect);
-                
-                // 在顯示圖上標記裁切位置
-                Point topleft = new Point((int)(startX / downScale), (int)(startY / downScale));
-                Point btmright = new Point((int)((startX + windowSize) / downScale), (int)((startY + windowSize) / downScale));
-                Cv2.Rectangle(drawMap, topleft, btmright, new Scalar(0, 0, 255), 2);
-                
-                // 標記輪廓點
-                Cv2.Circle(drawMap, contourPoint, 3, new Scalar(0, 255, 0), -1);
-                
-                // 保存裁切後的圖片
-                string timestamp = GetTimestamp();
-                string name = Path.GetFileNameWithoutExtension(inputPath);
-                string outputPath = Path.Combine(outputDir, $"{name}{timestamp}.png");
-                ImageEncodingParam[] Params = new ImageEncodingParam[]
-                {
-                    new ImageEncodingParam(ImwriteFlags.PngCompression, 0)
-                };
-                
-                Cv2.ImWrite(outputPath, crop, Params);
-                crop.Dispose();
-                count++;
+                sampledPoints.Add(edgePoint);
+                lastPoint = edgePoint;
             }
         }
         
-        Cv2.ImWrite(outputDir + Path.GetFileNameWithoutExtension(inputPath) + "_ROImap.png", drawMap);
-        return count;
+        // 使用採樣點切割圖像
+        foreach (Point point in sampledPoints)
+        {
+            // 將縮小的座標轉回原始大小
+            int origX = point.X * downScale;
+            int origY = point.Y * downScale;
+            
+            // 計算裁切區域，確保窗口以邊緣點為中心
+            int startX = Math.Max(0, origX - windowSize / 2);
+            int startY = Math.Max(0, origY - windowSize / 2);
+            
+            // 確保裁切區域不超出圖像範圍
+            if (startX + windowSize > oriImg.Width)
+                startX = oriImg.Width - windowSize;
+            if (startY + windowSize > oriImg.Height)
+                startY = oriImg.Height - windowSize;
+            
+            // 裁切原始灰度圖並添加到結果列表
+            Rect cropRect = new Rect(startX, startY, windowSize, windowSize);
+            Mat crop = new Mat(oriGray, cropRect).Clone(); // 使用clone()以確保獨立副本
+            croppedImages.Add(crop);
+            
+            // 在顯示圖上標記裁切位置
+            Point topleft = new Point((int)(startX / downScale), (int)(startY / downScale));
+            Point btmright = new Point((int)((startX + windowSize) / downScale), (int)((startY + windowSize) / downScale));
+            Cv2.Rectangle(drawMap, topleft, btmright, new Scalar(0, 0, 255), 2);
+            
+            // 標記邊緣點
+            Cv2.Circle(drawMap, point, 3, new Scalar(0, 255, 0), -1);
+        }
+        
+        // 如果輸出目錄存在，保存標記圖
+        if (!string.IsNullOrEmpty(outputDir))
+        {
+            Cv2.ImWrite(outputDir + Path.GetFileNameWithoutExtension(inputPath) + "_ROImap.png", drawMap);
+        }
+        
+        return croppedImages;
     }
     catch (Exception ex)
     {
