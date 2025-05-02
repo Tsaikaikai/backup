@@ -1,0 +1,34 @@
+🔍 1. apply_psf(image) — 應用點擴散函數 (Point Spread Function, PSF)
+應用：對圖像進行高斯模糊處理。
+
+意義：模擬人眼光學系統的模糊效應（例如視網膜上的光散射），這是視覺過程中不可避免的失真。
+
+🔍 2. apply_csf(image) — 應用對比敏感度函數 (Contrast Sensitivity Function, CSF)
+應用：將圖像轉換至頻域，並根據空間頻率加權後再轉回空間域。
+
+意義：模擬人眼對不同空間頻率（例如粗細圖案）的敏感度；人眼對中等頻率最敏感，對高/低頻較不敏感。
+
+🔍 3. calculate_local_contrast(image) — 計算局部對比度
+應用：計算每個像素與其周圍區域的亮度差，並經非線性處理。
+
+意義：模擬人眼對局部亮度變化的感知，反映出哪些變化是視覺上顯著的。
+
+🔍 4. spatial_pooling(response_diff) — 空間池化（Minkowski 距離）
+應用：將整張圖像中的局部差異彙整為一個整體差異值。
+
+意義：模擬人眼如何將整體的視覺差異統合感知，用來近似「整體感覺的不同」。
+
+🔍 5. response_to_jnd(pooled_response) — 響應轉換為 JND 值
+應用：使用一個線性轉換將整體響應轉換成「Just Noticeable Difference」數值。
+
+意義：量化人眼是否「可以注意到」這個缺陷的程度，JND > 1 通常表示可察覺。
+
+🔍 6. process_image(image) — 圖像預處理流程
+應用：將單張圖像依序經過 PSF → CSF → 對比度計算等步驟。
+
+意義：為最終 JND 計算做準備，模擬人眼從光學模糊到神經感知的整體處理。
+
+🔍 7. calculate_jnd(test_image, reference_image) — 計算兩圖的 JND 差異
+應用：將 test/reference 圖像分別進行 process_image，取得視覺響應差異，再空間池化，最後得出 JND 值。
+
+意義：用來量化 Mura 缺陷在人眼下是否能被注意到，是最終核心結果。
