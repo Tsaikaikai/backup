@@ -47,3 +47,45 @@ AWS：展出雲端AI服務與邊緣運算解決方案，支援視覺檢測與機
 GitHub：展示AI驅動的開發工具，提升視覺AI與機器學習應用的開發效率。
 
 這些廠商涵蓋了從硬體加速、邊緣運算平台到軟體工具與解決方案的完整AI視覺檢測生態系統，為AOI與機器視覺開發者提供了全方位的技術選擇。
+
+5月22日活動
+論壇活動
+AWS Forum：5月22日09:30-16:30，這是COMPUTEX 2025系列論壇的一部分，專注於AWS雲端技術與AI應用
+
+IC Taiwan Grand Challenge Unveil：13:00-15:00，在台北南港展覽館2館4樓Pi Stage舉行，展示台灣IC產業的創新挑戰與成果
+
+Canada Innovation Partnership Forum：15:30-17:30，在台北南港展覽館2館4樓Pi Stage舉行，聚焦加拿大與台灣的創新合作機會
+
+技術展示
+AST2700/AST1700 DC-SCM Module展示：10:00-10:30，線上展示開放式模組化設計的解決方案
+
+PEGATRON Creates Intelligent 5G Environments：11:30-12:00，線上展示和碩的智能5G環境應用
+
+QCT Cutting-Edge Infrastructures Accelerated by NVIDIA：13:00-13:30，線上展示QCT與NVIDIA合作的前沿基礎設施，特別適合AI應用
+
+創新活動
+InnoVEX Pitch Contest - Finals：13:00-16:00，在台北南港展覽館2館4樓Center Stage舉行，新創公司競賽決賽
+
+InnoVEX Pitch Contest - Award Ceremony：16:00-17:00，在台北南港展覽館2館4樓Center Stage舉行，新創競賽頒獎典禮
+
+GitHub - Unlocking Developer Productivity with AI：10:00-13:00，探討AI如何提升軟體開發生產力
+
+5月23日活動
+論壇活動
+Global Innovation Hub Forum：10:00-12:00，在台北南港展覽館2館4樓Center Stage舉行，探討全球創新趨勢
+
+Exploring the Future of Technology Through the Lens of "What's Next?" from Ventures' Perspective：13:00-16:00，在台北南港展覽館2館4樓Pi Stage舉行，從風險投資角度探討科技未來發展
+
+技術展示
+High-Performance Rugged Edge AI Computer JCO-6000-ORN series：10:00-10:30，線上展示高性能邊緣AI電腦，適用於AOI等工業應用
+
+Shuttle SPCNV03 | Mini AI Edge PC with NVIDIA JETSON Power：10:30-11:00，線上展示搭載NVIDIA JETSON的迷你AI邊緣運算PC
+
+L701, The smarter way to secure your daily life：13:30-14:00，線上展示智能安全解決方案
+
+Formula V Line Computex 2025 promote video：14:00-14:30，線上產品推廣
+
+創新活動
+InnoVEX Top 15 Meet Up：10:00-12:00，在台北南港展覽館2館4樓Pi Stage舉行，與15家頂尖新創公司交流
+
+IPHatch Taiwan Launch：15:30-17:00，在台北南港展覽館2館4樓Pi Stage舉行，專利創新計畫啟動
