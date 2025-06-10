@@ -21,12 +21,14 @@ def reduce_noise(image, bilateral_d=9, bilateral_color=75, bilateral_space=75, g
     
     return denoised
 
-def detect_scratches(original, golden, threshold=30, use_adaptive=False):
+def detect_scratches(original, golden, threshold=30, kernel_size=7, use_adaptive=False):
     """
     通過比較原始圖像和golden image來檢測刮傷，
     支援自適應閾值處理
     """
     # 計算差異
+    cv2.imwrite("D:\\Datasets\\AIF\\250522\\NG\\ori.jpg",original)
+    cv2.imwrite("D:\\Datasets\\AIF\\250522\\NG\\golden.jpg",golden)
     diff = cv2.absdiff(original, golden)
     
     # 轉換為灰度圖像(如果是彩色的)
@@ -37,29 +39,32 @@ def detect_scratches(original, golden, threshold=30, use_adaptive=False):
     
     # 應用額外的高斯模糊以減少細微雜訊
     diff_gray = cv2.GaussianBlur(diff_gray, (9, 9), 0)
-    
+    cv2.imwrite("D:\\Datasets\\AIF\\250522\\NG\\diff_gray.jpg",diff_gray)
+
     if use_adaptive:
         # 使用自適應閾值處理，更好地處理不均勻照明和紋理差異
+
         binary = cv2.adaptiveThreshold(
             diff_gray, 
             255, 
             cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
             cv2.THRESH_BINARY, 
-            11, 
+            51, 
             threshold
         )
+
     else:
         # 使用全局閾值
         _, binary = cv2.threshold(diff_gray, threshold, 255, cv2.THRESH_BINARY)
     
     # 使用形態學操作來減少噪聲，先開運算後閉運算
-    kernel = np.ones((3, 3), np.uint8)
+    kernel = np.ones((kernel_size,kernel_size), np.uint8)
     binary = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
     binary = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
     
     return binary
 
-def texture_removal(image, kernel_size=7):
+def texture_removal(image, kernel_size=11):
     """
     使用形態學操作移除紋理
     """
@@ -95,14 +100,14 @@ def find_scratches(binary, min_area=50, min_length=20):
         width, height = rect[1]
         
         # 計算長寬比
-        aspect_ratio = max(width, height) / (min(width, height) if min(width, height) > 0 else 1)
+        #aspect_ratio = max(width, height) / (min(width, height) if min(width, height) > 0 else 1)
         
         # 計算最大尺寸
         max_dimension = max(width, height)
         
         # 過濾非線性的輪廓 (長寬比太小或太大的可能是雜訊)
         # 同時過濾太短的線 (可能是產品顆粒，而非刮傷)
-        if aspect_ratio > 2.0 and max_dimension > min_length:
+        if max_dimension > min_length:
             significant_contours.append(cnt)
     
     return significant_contours
@@ -112,14 +117,14 @@ def mark_scratches(image, contours):
     在原始圖像上標記刮傷
     """
     result = image.copy()
-    cv2.drawContours(result, contours, -1, (0, 0, 255), 2)
+    cv2.drawContours(result, contours, -1, (0, 255, 0), 2)
     
     # 添加邊界框和標籤
     for i, cnt in enumerate(contours):
         rect = cv2.minAreaRect(cnt)
         box = cv2.boxPoints(rect)
         box = box.astype(int)
-        cv2.drawContours(result, [box], 0, (0, 255, 0), 2)
+        #cv2.drawContours(result, [box], 0, (0, 255, 0), 2)
         
         # 計算面積並顯示
         area = cv2.contourArea(cnt)
@@ -146,7 +151,7 @@ def load_image(image_path):
     print(f"成功讀取圖像，尺寸: {image.shape}")
     return image
 
-def process_image(image_path, mask_path=None, ksize=15, threshold=30, use_adaptive=False, min_area=50, min_length=20):
+def process_image(image_path, mask_path=None, blue_ksize=15, denoise_kernel=7, threshold=30, use_adaptive=False, min_area=50, min_length=20):
     """
     處理圖像並檢測刮傷，可選擇性使用mask限制檢測區域
     """
@@ -186,10 +191,10 @@ def process_image(image_path, mask_path=None, ksize=15, threshold=30, use_adapti
     texture_processed = texture_removal(denoised)
     
     # 3. 創建golden image
-    golden = create_golden_image(texture_processed, ksize)
+    golden = create_golden_image(texture_processed, blue_ksize)
     
     # 4. 檢測刮傷 (不使用mask)
-    binary_no_mask = detect_scratches(texture_processed, golden, threshold, use_adaptive)
+    binary_no_mask = detect_scratches(texture_processed, golden, threshold, denoise_kernel, use_adaptive)
     
     # 存儲無mask時的刮傷輪廓
     scratches_no_mask = find_scratches(binary_no_mask, min_area, min_length)
@@ -264,8 +269,8 @@ def display_results(results):
     axes1[1, 2].set_title('marked_with_mask')
     axes1[1, 2].axis('off')
     
-    plt.tight_layout()
-    plt.show()
+    # plt.tight_layout()
+    # plt.show()
     
     # 顯示有無mask對比結果
     fig2, axes2 = plt.subplots(2, 2, figsize=(16, 12))
@@ -317,7 +322,7 @@ def save_results(results, output_dir='./'):
     cv2.imwrite(f"{output_dir}/comparison.jpg", results['comparison'])
     print(f"結果已保存至 {output_dir} 目錄")
 
-def compare_mask(image_path, mask_path, output_dir=None, ksize=15, threshold=30, use_adaptive=False, min_area=50, min_length=20, show_results=True):
+def compare_mask(image_path, mask_path, output_dir=None, blue_ksize=15, denoise_ksize=7, threshold=30, use_adaptive=False, min_area=50, min_length=20, show_results=True):
     """
     比較有無mask對檢測結果的影響
     """
@@ -337,7 +342,8 @@ def compare_mask(image_path, mask_path, output_dir=None, ksize=15, threshold=30,
     results = process_image(
         image_path, 
         mask_path if has_mask else None,
-        ksize, 
+        blue_ksize, 
+        denoise_ksize,
         threshold, 
         use_adaptive,
         min_area,
@@ -361,20 +367,21 @@ if __name__ == "__main__":
     import argparse
     
     # 預設使用路徑
-    default_path = r"C:\Users\User\Desktop\compare_AOI\test1.png"
-    default_mask_path = r"C:\Users\User\Desktop\compare_AOI\Mask1.png"
+    default_path = r"D:\\Datasets\\AIF\\250522\\NG\\28_4.jpg"
+    default_mask_path = r"C:\\Users\\User\\Desktop\\compare_AOI\\Mask1.png"
     
     parser = argparse.ArgumentParser(description='檢測圖像中的刮傷並比較有無mask的差異')
     parser.add_argument('--image_path', type=str, default=default_path, help='要處理的圖像路徑')
     parser.add_argument('--mask_path', type=str, default=default_mask_path, help='遮罩圖像路徑，白色區域為感興趣區域')
-    parser.add_argument('--ksize', type=int, default=35, help='中值濾波器核大小 (必須是奇數)')
-    parser.add_argument('--threshold', type=int, default=7, help='差異檢測閾值 (0-255)')
-    parser.add_argument('--adaptive', action='store_true', help='使用自適應閾值而非全局閾值')
-    parser.add_argument('--min_area', type=int, default=30, help='最小輪廓面積')
-    parser.add_argument('--min_length', type=int, default=15, help='最小刮傷長度')
+    parser.add_argument('--blue_ksize', type=int, default=81, help='中值濾波器核大小 (必須是奇數)')
+    parser.add_argument('--denoise_ksize', type=int, default=7, help='二值化後濾除核大小 (必須是奇數)')
+    parser.add_argument('--threshold', type=int, default=9, help='差異檢測閾值 (0-255)')
+    parser.add_argument('--adaptive', type=bool, default=False, help='使用自適應閾值而非全局閾值')
+    parser.add_argument('--min_area', type=int, default=180, help='最小輪廓面積')
+    parser.add_argument('--min_length', type=int, default=5, help='最小刮傷長度')
     parser.add_argument('--save', type=bool, default=True, help='保存結果圖像')
     parser.add_argument('--output_dir', type=str, default=os.path.dirname(default_path), help='輸出目錄')
-    parser.add_argument('--no-show', action='store_true', help='不顯示結果，僅保存')
+    parser.add_argument('--no-show', type=bool, default=True, help='不顯示結果，僅保存')
     parser.add_argument('--compare', action='store_true', help='執行有無mask的結果比較')
     
     args = parser.parse_args()
@@ -383,9 +390,13 @@ if __name__ == "__main__":
     print(f"使用mask: {args.mask_path}")
     print(f"輸出目錄: {args.output_dir}")
     
-    # 確保ksize是奇數
-    if args.ksize % 2 == 0:
-        args.ksize += 1
+    # 確保blue_ksize是奇數
+    if args.blue_ksize % 2 == 0:
+        args.blue_ksize += 1
+
+    # 確保denoise_ksize是奇數
+    if args.denoise_ksize % 2 == 0:
+        args.denoise_ksize += 1
     
     try:
         # 執行帶比較的處理
@@ -394,7 +405,8 @@ if __name__ == "__main__":
                 args.image_path,
                 args.mask_path,
                 args.output_dir if args.save else None,
-                args.ksize,
+                args.blue_ksize,
+                args.denoise_ksize,
                 args.threshold,
                 args.adaptive,
                 args.min_area,
@@ -406,7 +418,8 @@ if __name__ == "__main__":
             results = process_image(
                 args.image_path, 
                 args.mask_path,
-                args.ksize, 
+                args.blue_ksize,
+                args.denoise_ksize,
                 args.threshold, 
                 args.adaptive,
                 args.min_area,

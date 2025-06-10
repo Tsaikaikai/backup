@@ -1,0 +1,6 @@
+2025/05/29, 10:55:09:4940 - ==[Error Happend]==
+2025/05/29, 10:55:09:4940 - [Center]NULL[流程異常][System.Exception: CS_ECAT_Compare_Set_Channel_Position, Error Code :4352
+   於 Wafer_Inline_System.Card_Delta_ECDI.SetComparePos(Int32 Pos) 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\Class\Card\ClsCard_Delta_ECDI.cs: 行 595
+   於 Wafer_Inline_System.MCenter.MainFlow() 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\MCenter.cs: 行 2616][System.Exception: CS_ECAT_Compare_Set_Channel_Position, Error Code :4352
+   於 Wafer_Inline_System.Card_Delta_ECDI.SetComparePos(Int32 Pos) 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\Class\Card\ClsCard_Delta_ECDI.cs: 行 595
+   於 Wafer_Inline_System.MCenter.MainFlow() 於 D:\Mick\Wafer_Inline_System1126\Wafer_Inline_System1122\Wafer_Inline_System\MCenter.cs: 行 2616]
