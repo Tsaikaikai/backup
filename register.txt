@@ -1,0 +1,43 @@
+加在喚起UI前的程式進入點就可以了 int main(array<System::String ^> ^args)
+程式碼加下列這段 : 
+         int LicenseState = MILExtend_x64::MILExtend::CheckLicence();
+         System::String ^ msg;
+         int isShowMsg = 0;
+         if (LicenseState == 1)
+         {
+              msg = "";
+         }
+         else if (LicenseState == 4 || LicenseState == 5)
+         {
+              msg = "程式試用中, 請儘速註冊.";
+              isShowMsg = 1;
+         }
+         else if (LicenseState == 2 ||   LicenseState == 3)
+         {
+              msg = "註冊碼錯誤, 請重新註冊.";
+              isShowMsg = 2;
+         }
+         else
+         {
+              msg = "認證錯誤, 請洽軟體人員.";
+              isShowMsg = 2;
+         }
+
+
+         if (isShowMsg == 1)
+         {
+              System::Windows::Forms::MessageBox::Show(
+                  msg,
+                  "License Check",
+                  System::Windows::Forms::MessageBoxButtons::OK,
+                  System::Windows::Forms::MessageBoxIcon::Warning );
+         }
+         else if (isShowMsg == 2)
+         {
+              System::Windows::Forms::MessageBox::Show(
+                  msg,
+                  "License Check",
+                  System::Windows::Forms::MessageBoxButtons::OK,
+                  System::Windows::Forms::MessageBoxIcon::Error );
+              return 0;
+         }
