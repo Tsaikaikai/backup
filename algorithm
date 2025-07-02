@@ -1,0 +1,82 @@
+        /// <summary>
+        /// 進行亮度平衡處理
+        /// </summary>
+        /// <param name="srcImage">輸入影像</param>
+        /// <param name="compensateStrength">補償強度 (預設128)</param>
+        /// <param name="blurKernelSize">模糊核心大小 (預設81，必須為奇數)</param>
+        /// <returns>處理後的影像</returns>
+        public Mat BrightBalance(Mat srcImage)
+        {
+            Mat resultImage = new Mat();
+            Mat hsvImage = new Mat();
+            Mat[] hsvChannels = new Mat[3];
+            Mat vChannel = new Mat();
+            Mat blurredV = new Mat();
+            Mat correctedV = new Mat();
+
+            try
+            {
+                if (srcImage == null || srcImage.Empty())
+                {
+                    throw new ArgumentException("輸入影像不能為空");
+                }
+
+                // 確保模糊核心大小為奇數
+                int blurKernelSize = config.BlurKernelSize;
+                if (config.BlurKernelSize % 2 == 0)
+                {
+                    blurKernelSize = config.BlurKernelSize + 1;
+                }
+
+                // 將影像轉換為HSV色彩空間
+                Cv2.CvtColor(srcImage, hsvImage, ColorConversionCodes.BGR2HSV);
+
+                // 分離HSV通道
+                Cv2.Split(hsvImage, out hsvChannels);
+
+                // 取得V通道(亮度通道)並轉換為float32
+                hsvChannels[2].ConvertTo(vChannel, MatType.CV_32F);
+
+                // 對V通道進行高斯模糊以估計亮度分布
+                Size kernelSize = new Size(blurKernelSize, blurKernelSize);
+                Cv2.GaussianBlur(vChannel, blurredV, kernelSize, 0);
+
+                // 進行亮度補償：corrected_v = (v / (blurred + 1e-6)) * compensate_strength
+                // 防止除以零，加上一個很小的值
+                Cv2.Add(blurredV, new Scalar(1e-6), blurredV);
+                Cv2.Divide(vChannel, blurredV, correctedV);
+                Cv2.Multiply(correctedV, new Scalar(config.CompensateStrength), correctedV);
+
+                // 限制值的範圍在0-255之間並轉回uint8
+                correctedV = correctedV.Clone();
+                correctedV.ConvertTo(hsvChannels[2], MatType.CV_8U);
+
+                // 合併HSV通道
+                Cv2.Merge(hsvChannels, hsvImage);
+
+                // 轉換回BGR色彩空間
+                Cv2.CvtColor(hsvImage, resultImage, ColorConversionCodes.HSV2BGR);
+
+                return resultImage.Clone();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"亮度平衡處理失敗: {ex.Message}");
+            }
+            finally
+            {
+                // 釋放資源
+                hsvImage?.Dispose();
+                vChannel?.Dispose();
+                blurredV?.Dispose();
+                correctedV?.Dispose();
+
+                if (hsvChannels != null)
+                {
+                    foreach (var channel in hsvChannels)
+                    {
+                        channel?.Dispose();
+                    }
+                }
+            }
+        }
