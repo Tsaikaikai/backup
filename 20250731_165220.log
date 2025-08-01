@@ -1,0 +1,150 @@
+2025-07-31 16:52:20,665 - mmseg - INFO - Multi-processing start method is `None`
+2025-07-31 16:52:20,669 - mmseg - INFO - OpenCV num_threads is `32
+2025-07-31 16:52:20,718 - mmseg - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.10.12 (main, May 27 2025, 17:12:29) [GCC 11.4.0]
+CUDA available: True
+GPU 0: NVIDIA GeForce RTX 4090
+CUDA_HOME: /usr/local/cuda
+NVCC: Cuda compilation tools, release 11.8, V11.8.89
+GCC: x86_64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+PyTorch: 2.1.0+cu118
+PyTorch compiling details: PyTorch built with:
+  - GCC 9.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2022.2-Product Build 20220804 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v3.1.1 (Git Hash 64f6bcbcbab628e96f33a62c3e975f8535a7bde4)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 11.8
+  - NVCC architecture flags: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_90,code=sm_90
+  - CuDNN 8.7
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=11.8, CUDNN_VERSION=8.7.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -D_GLIBCXX_USE_CXX11_ABI=0 -fabi-version=11 -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-unused-function -Wno-unused-result -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=old-style-cast -Wno-invalid-partial-specialization -Wno-unused-private-field -Wno-aligned-allocation-unavailable -Wno-missing-braces -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Werror=cast-function-type -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_DISABLE_GPU_ASSERTS=ON, TORCH_VERSION=2.1.0, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, 
+
+TorchVision: 0.16.0+cu118
+OpenCV: 4.8.0
+MMCV: 1.7.2
+MMCV Compiler: GCC 9.3
+MMCV CUDA Compiler: 11.8
+MMSegmentation: 0.30.0+
+------------------------------------------------------------
+
+2025-07-31 16:52:20,734 - mmseg - INFO - Distributed training: True
+2025-07-31 16:52:20,735 - mmseg - INFO - Set random seed to 1412624685, deterministic: False
+2025-07-31 16:52:23,313 - mmseg - INFO - EncoderDecoder(
+  (backbone): DinoVisionTransformer(
+    (patch_embed): PatchEmbed(
+      (proj): Conv2d(3, 768, kernel_size=(24, 24), stride=(24, 24))
+      (norm): Identity()
+    )
+    (blocks): ModuleList(
+      (0-11): 12 x NestedTensorBlock(
+        (norm1): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (attn): Attention(
+          (qkv): Linear(in_features=768, out_features=2304, bias=True)
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): Linear(in_features=768, out_features=768, bias=True)
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls1): LayerScale()
+        (drop_path1): Identity()
+        (norm2): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+        (mlp): Mlp(
+          (fc1): Linear(in_features=768, out_features=3072, bias=True)
+          (act): GELU(approximate='none')
+          (fc2): Linear(in_features=3072, out_features=768, bias=True)
+          (drop): Dropout(p=0.0, inplace=False)
+        )
+        (ls2): LayerScale()
+        (drop_path2): Identity()
+      )
+    )
+    (norm): LayerNorm((768,), eps=1e-06, elementwise_affine=True)
+    (head): Identity()
+  )
+  (decode_head): BNHead(
+    input_transform=resize_concat, ignore_index=255, align_corners=False
+    (loss_decode): CrossEntropyLoss(avg_non_ignore=False)
+    (conv_seg): Conv2d(768, 2, kernel_size=(1, 1), stride=(1, 1))
+    (bn): SyncBatchNorm(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  init_cfg={'type': 'Normal', 'std': 0.01, 'override': {'name': 'conv_seg'}}
+)
+2025-07-31 16:52:23,344 - mmseg - INFO - Loaded 3880 images
+2025-07-31 16:52:23,612 - mmseg - INFO - Loaded 970 images
+2025-07-31 16:52:23,615 - mmseg - INFO - Start running, host: auo@3f76c86ff6d9, work_dir: /home/auo/dinov2_auo/checkpoint/250731_Test4
+2025-07-31 16:52:23,615 - mmseg - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) PolyLrUpdaterHook                  
+(ABOVE_NORMAL) DistOptimizerHook                  
+(NORMAL      ) CheckpointHook                     
+(LOW         ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) PolyLrUpdaterHook                  
+(LOW         ) IterTimerHook                      
+(LOW         ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) PolyLrUpdaterHook                  
+(LOW         ) IterTimerHook                      
+(LOW         ) DistEvalHook                       
+ -------------------- 
+after_train_iter:
+(ABOVE_NORMAL) DistOptimizerHook                  
+(NORMAL      ) CheckpointHook                     
+(LOW         ) IterTimerHook                      
+(LOW         ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) CheckpointHook                     
+(LOW         ) DistEvalHook                       
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_val_epoch:
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+before_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_epoch:
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+after_run:
+(VERY_LOW    ) TextLoggerHook                     
+ -------------------- 
+2025-07-31 16:52:23,616 - mmseg - INFO - workflow: [('train', 1)], max: 40000 iters
+2025-07-31 16:52:23,616 - mmseg - INFO - Checkpoints will be saved to /home/auo/dinov2_auo/checkpoint/250731_Test4 by HardDiskBackend.
+2025-07-31 16:53:43,469 - mmseg - INFO - Iter [50/40000]	lr: 3.359e-05, eta: 3:10:39, time: 0.286, data_time: 0.048, memory: 1966, decode.loss_ce: 0.3019, decode.acc_seg: 49.1221, loss: 0.3019
+2025-07-31 16:53:53,045 - mmseg - INFO - Iter [100/40000]	lr: 6.677e-05, eta: 2:38:53, time: 0.192, data_time: 0.007, memory: 1966, decode.loss_ce: 0.2630, decode.acc_seg: 72.4471, loss: 0.2630
+2025-07-31 16:54:02,805 - mmseg - INFO - Iter [150/40000]	lr: 9.986e-05, eta: 2:29:00, time: 0.195, data_time: 0.007, memory: 1966, decode.loss_ce: 0.2277, decode.acc_seg: 86.6618, loss: 0.2277
+2025-07-31 16:54:12,441 - mmseg - INFO - Iter [200/40000]	lr: 1.329e-04, eta: 2:23:34, time: 0.193, data_time: 0.007, memory: 1966, decode.loss_ce: 0.1687, decode.acc_seg: 93.2103, loss: 0.1687
+2025-07-31 16:54:27,368 - mmseg - INFO - Iter [250/40000]	lr: 1.658e-04, eta: 2:34:16, time: 0.299, data_time: 0.104, memory: 1966, decode.loss_ce: 0.1364, decode.acc_seg: 94.8279, loss: 0.1364
+2025-07-31 16:54:37,203 - mmseg - INFO - Iter [300/40000]	lr: 1.986e-04, eta: 2:30:05, time: 0.197, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0998, decode.acc_seg: 96.6313, loss: 0.0998
+2025-07-31 16:54:46,892 - mmseg - INFO - Iter [350/40000]	lr: 2.314e-04, eta: 2:26:46, time: 0.194, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0783, decode.acc_seg: 97.2304, loss: 0.0783
+2025-07-31 16:54:56,550 - mmseg - INFO - Iter [400/40000]	lr: 2.641e-04, eta: 2:24:12, time: 0.193, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0626, decode.acc_seg: 97.7983, loss: 0.0626
+2025-07-31 16:55:06,389 - mmseg - INFO - Iter [450/40000]	lr: 2.967e-04, eta: 2:22:25, time: 0.197, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0523, decode.acc_seg: 98.2435, loss: 0.0523
+2025-07-31 16:55:20,820 - mmseg - INFO - Iter [500/40000]	lr: 3.292e-04, eta: 2:27:01, time: 0.289, data_time: 0.090, memory: 1966, decode.loss_ce: 0.0465, decode.acc_seg: 98.4245, loss: 0.0465
+2025-07-31 16:55:30,661 - mmseg - INFO - Iter [550/40000]	lr: 3.616e-04, eta: 2:25:15, time: 0.197, data_time: 0.008, memory: 1966, decode.loss_ce: 0.0428, decode.acc_seg: 98.6156, loss: 0.0428
+2025-07-31 16:55:40,500 - mmseg - INFO - Iter [600/40000]	lr: 3.939e-04, eta: 2:23:45, time: 0.197, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0365, decode.acc_seg: 98.7822, loss: 0.0365
+2025-07-31 16:55:50,222 - mmseg - INFO - Iter [650/40000]	lr: 4.262e-04, eta: 2:22:19, time: 0.194, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0355, decode.acc_seg: 98.8184, loss: 0.0355
+2025-07-31 16:55:59,968 - mmseg - INFO - Iter [700/40000]	lr: 4.584e-04, eta: 2:21:07, time: 0.195, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0383, decode.acc_seg: 98.7665, loss: 0.0383
+2025-07-31 16:56:14,651 - mmseg - INFO - Iter [750/40000]	lr: 4.905e-04, eta: 2:24:20, time: 0.294, data_time: 0.094, memory: 1966, decode.loss_ce: 0.0293, decode.acc_seg: 98.9531, loss: 0.0293
+2025-07-31 16:56:24,362 - mmseg - INFO - Iter [800/40000]	lr: 5.225e-04, eta: 2:23:05, time: 0.194, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0318, decode.acc_seg: 98.9772, loss: 0.0318
+2025-07-31 16:56:34,319 - mmseg - INFO - Iter [850/40000]	lr: 5.544e-04, eta: 2:22:08, time: 0.199, data_time: 0.008, memory: 1966, decode.loss_ce: 0.0289, decode.acc_seg: 99.0392, loss: 0.0289
+2025-07-31 16:56:44,181 - mmseg - INFO - Iter [900/40000]	lr: 5.863e-04, eta: 2:21:12, time: 0.197, data_time: 0.008, memory: 1966, decode.loss_ce: 0.0265, decode.acc_seg: 99.1340, loss: 0.0265
+2025-07-31 16:56:53,830 - mmseg - INFO - Iter [950/40000]	lr: 6.180e-04, eta: 2:20:13, time: 0.193, data_time: 0.007, memory: 1966, decode.loss_ce: 0.0286, decode.acc_seg: 99.0243, loss: 0.0286
+2025-07-31 16:57:08,429 - mmseg - INFO - Saving checkpoint at 1000 iterations
+2025-07-31 16:57:09,864 - mmseg - INFO - Exp name: dinov2_vitb14_auo_linear_config.py
+2025-07-31 16:57:09,865 - mmseg - INFO - Iter [1000/40000]	lr: 6.497e-04, eta: 2:23:27, time: 0.321, data_time: 0.091, memory: 1966, decode.loss_ce: 0.0276, decode.acc_seg: 99.0159, loss: 0.0276
