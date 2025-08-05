@@ -1,0 +1,144 @@
+{
+    "status": "INSPECT_SPEC",
+    "detail": {
+        "SpecName": "TestSpec",
+        "Diameter": {
+            "Limit_Max": 301.0,
+            "Limit_Min": 299.0
+        },
+        "Edge_Avg": {
+            "Edge_A1": {
+                "Limit_Max": 425.0,
+                "Limit_Min": 415.0
+            },
+            "Edge_A2": {
+                "Limit_Max": 420.0,
+                "Limit_Min": 400.0
+            },
+            "Edge_B1": {
+                "Limit_Max": 180.0,
+                "Limit_Min": 170.0
+            },
+            "Edge_B2": {
+                "Limit_Max": 180.0,
+                "Limit_Min": 170.0
+            },
+            "Edge_R1": {
+                "Limit_Max": 160.0,
+                "Limit_Min": 150.0
+            },
+            "Edge_R2": {
+                "Limit_Max": 150.0,
+                "Limit_Min": 120.0
+            },
+            "Edge_t": {
+                "Limit_Max": 880.0,
+                "Limit_Min": 840.0
+            },
+            "Edge_Ang1": {
+                "Limit_Max": 23.5,
+                "Limit_Min": 18.0
+            },
+            "Edge_Ang2": {
+                "Limit_Max": 23.5,
+                "Limit_Min": 18.0
+            },
+            "Edge_BC": {
+                "Limit_Max": 520.0,
+                "Limit_Min": 480.0
+            },
+            "Edge_C1": {
+                "Limit_Max": 120.0,
+                "Limit_Min": 110.0
+            },
+            "Edge_C2": {
+                "Limit_Max": 110.0,
+                "Limit_Min": 90.0
+            }
+        },
+        "Edge_Pp": {
+            "Edge_A1_P": {
+                "Limit_Max": 25.0,
+                "Limit_Min": 20.0
+            },
+            "Edge_A2_P": {
+                "Limit_Max": 30.0,
+                "Limit_Min": 20.0
+            },
+            "Edge_B1_P": {
+                "Limit_Max": 12.0,
+                "Limit_Min": 10.0
+            },
+            "Edge_B2_P": {
+                "Limit_Max": 12.0,
+                "Limit_Min": 10.0
+            },
+            "Edge_R1_P": {
+                "Limit_Max": 15.0,
+                "Limit_Min": 10.0
+            },
+            "Edge_R2_P": {
+                "Limit_Max": 15.0,
+                "Limit_Min": 10.0
+            },
+            "Edge_t_P": {
+                "Limit_Max": 4.0,
+                "Limit_Min": 3.0
+            },
+            "Edge_Ang1_P": {
+                "Limit_Max": 0.9,
+                "Limit_Min": 0.5
+            },
+            "Edge_Ang2_P": {
+                "Limit_Max": 0.9,
+                "Limit_Min": 0.5
+            },
+            "Edge_BC_P": {
+                "Limit_Max": 15.0,
+                "Limit_Min": 12.0
+            },
+            "Edge_C1_P": {
+                "Limit_Max": 15.0,
+                "Limit_Min": 10.0
+            },
+            "Edge_C2_P": {
+                "Limit_Max": 15.0,
+                "Limit_Min": 8.0
+            }
+        },
+        "Notch": {
+            "Notch_Vh": {
+                "Limit_Max": 2.0,
+                "Limit_Min": 1.0
+            },
+            "Notch_Vw": {
+                "Limit_Max": 4.0,
+                "Limit_Min": 3.0
+            },
+            "Notch_Vr": {
+                "Limit_Max": 1.2,
+                "Limit_Min": 1.0
+            },
+            "Notch_AngV": {
+                "Limit_Max": 92.0,
+                "Limit_Min": 89.0
+            },
+            "Notch_P1": {
+                "Limit_Max": 2.3,
+                "Limit_Min": 2.0
+            },
+            "Notch_P2": {
+                "Limit_Max": 3.2,
+                "Limit_Min": 3.0
+            },
+            "Notch_VR1": {
+                "Limit_Max": 1.5,
+                "Limit_Min": 1.0
+            },
+            "Notch_VR2": {
+                "Limit_Max": 1.5,
+                "Limit_Min": 1.0
+            }
+        }
+    }
+}
