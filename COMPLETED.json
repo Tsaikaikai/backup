@@ -2,17 +2,17 @@
     "status": "COMPLETED",
     "detail": {
         "Info": {
-            "CassetteNo": "L99701",
+            "CassetteNo": "L99959",
             "Port": "1",
-            "LotNo": "999-OPDGOC41-029",
-            "WaferNo": "2186-5258-1242-4571",
-            "WaferIndex": 1
+            "LotNo": "999-GVGBEW04-490",
+            "WaferNo": "1747-3299-8156-8923",
+            "WaferIndex": 3
         },
         "JudgeStatus": {
             "InspectSpecName": "TestSpec",
             "ErrorMsg": "",
-            "WaferInTime": "2025-08-05 14:50:16",
-            "TactTime": 32759,
+            "WaferInTime": "2025-08-12 08:57:09",
+            "TactTime": 32184,
             "IsAfterGrinding": true,
             "IsInspectSuccessful": true
         },
@@ -35,18 +35,18 @@
             "Diameter": 300.20591655727742
         },
         "EdgeMeasureAvgResult": {
-            "A1": 418.33834308562848,
+            "A1": 418.33834308562831,
             "A2": 410.53519374133089,
             "B1": 173.31604008986335,
             "B2": 179.39188647628629,
-            "R1": 152.10829066872827,
-            "R2": 124.62958308526075,
-            "t": 857.79513027615337,
-            "Ang1": 20.255921410797228,
+            "R1": 152.10829066872824,
+            "R2": 124.62958308526078,
+            "t": 857.79513027615315,
+            "Ang1": 20.25592141079721,
             "Ang2": 22.904583048445161,
             "BC": 505.08720371000385,
-            "C1": 117.75789102707455,
-            "C2": 100.02469990024743
+            "C1": 117.75789102707456,
+            "C2": 100.0246999002474
         },
         "EdgeMeasurePpResult": {
             "A1": 23.697333733090602,
@@ -63,20 +63,22 @@
             "C2": 9.0105815971138981
         },
         "NotchMeasureResult": {
-            "Vh": 1.1250449999999999,
-            "Vw": 3.2841113022899697,
-            "Vr": 1.1328521051988425,
+            "Vh": 1.125045,
+            "Vw": 3.2841113022899693,
+            "Vr": 1.1328521051988427,
             "AngV": 90.484980373599086,
             "P1": 2.1190586848591511,
             "P2": 3.1553700000000005,
-            "Vr1": 1.0913213680293432,
-            "Vr2": 1.0481064098065092
+            "VR1": 1.0913213680293432,
+            "VR2": 1.0481064098065092
         },
-        "DefectImages": [
-            "http://localhost:5000/images/NG1.bmp",
-            "http://localhost:5000/images/NG2.bmp",
-            "http://localhost:5000/images/NG3.bmp",
-            "http://localhost:5000/images/NG4.bmp"
+        "TopDefectImages": [
+            "http://localhost:5000/images/Top/NG1.bmp",
+            "http://localhost:5000/images/Top/NG2.bmp"
+        ],
+        "BottomDefectImages": [
+            "http://localhost:5000/images/Bottom/NG3.bmp",
+            "http://localhost:5000/images/Bottom/NG4.bmp"
         ]
     }
 }

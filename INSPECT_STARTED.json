@@ -1,0 +1,12 @@
+{
+    "status": "INSPECT_STARTED",
+    "detail": {
+        "CassetteNo": "L99959",
+        "RecipeName": "123",
+        "LotNo": "999-GVGBEW04-490",
+        "WaferNo": "9738-9805-8627-6335",
+        "Port": 1,
+        "WaferQty": 25,
+        "WaferIndex": 4
+    }
+}
