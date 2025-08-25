@@ -1,0 +1,1025 @@
+找到 496 個影像檔案
+處理影像: NG/474_0_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_0_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_0_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_0_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_10_1.json
+處理影像: NG/474_10_2.jpg
+處理 NG/474_10_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/474_10_3.json
+找不到對應的標註檔案: label/474_10_4.json
+處理影像: NG/474_11_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_11_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_11_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_11_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_12_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_12_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_12_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_12_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_13_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_13_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_13_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_13_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_14_1.json
+找不到對應的標註檔案: label/474_14_2.json
+找不到對應的標註檔案: label/474_14_3.json
+找不到對應的標註檔案: label/474_14_4.json
+處理影像: NG/474_15_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_15_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_15_3.json
+處理影像: NG/474_15_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_16_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_16_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_16_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_16_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_17_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_17_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_17_3.json
+找不到對應的標註檔案: label/474_17_4.json
+處理影像: NG/474_18_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_18_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_18_3.jpg
+處理 NG/474_18_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/474_18_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_19_1.json
+找不到對應的標註檔案: label/474_19_2.json
+找不到對應的標註檔案: label/474_19_3.json
+找不到對應的標註檔案: label/474_19_4.json
+處理影像: NG/474_1_1.jpg
+處理 NG/474_1_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/474_1_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_1_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_1_4.jpg
+處理 NG/474_1_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/474_20_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_20_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_20_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_20_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_21_1.json
+找不到對應的標註檔案: label/474_21_2.json
+找不到對應的標註檔案: label/474_21_3.json
+找不到對應的標註檔案: label/474_21_4.json
+找不到對應的標註檔案: label/474_22_1.json
+找不到對應的標註檔案: label/474_22_2.json
+找不到對應的標註檔案: label/474_22_3.json
+找不到對應的標註檔案: label/474_22_4.json
+找不到對應的標註檔案: label/474_23_1.json
+找不到對應的標註檔案: label/474_23_2.json
+找不到對應的標註檔案: label/474_23_3.json
+找不到對應的標註檔案: label/474_23_4.json
+處理影像: NG/474_24_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_24_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_24_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_24_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_25_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_25_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_25_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_25_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_26_1.json
+處理影像: NG/474_26_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_26_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_26_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_27_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_27_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_27_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_27_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_28_1.json
+找不到對應的標註檔案: label/474_28_2.json
+找不到對應的標註檔案: label/474_28_3.json
+找不到對應的標註檔案: label/474_28_4.json
+處理影像: NG/474_29_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_29_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_29_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_29_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_2_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_2_2.json
+找不到對應的標註檔案: label/474_2_3.json
+處理影像: NG/474_2_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_30_1.json
+找不到對應的標註檔案: label/474_30_2.json
+找不到對應的標註檔案: label/474_30_3.json
+找不到對應的標註檔案: label/474_30_4.json
+找不到對應的標註檔案: label/474_3_1.json
+找不到對應的標註檔案: label/474_3_2.json
+找不到對應的標註檔案: label/474_3_3.json
+找不到對應的標註檔案: label/474_3_4.json
+找不到對應的標註檔案: label/474_4_1.json
+找不到對應的標註檔案: label/474_4_2.json
+找不到對應的標註檔案: label/474_4_3.json
+找不到對應的標註檔案: label/474_4_4.json
+處理影像: NG/474_5_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_5_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_5_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_5_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_6_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_6_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_6_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_6_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_7_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_7_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_7_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_7_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_8_1.json
+找不到對應的標註檔案: label/474_8_2.json
+找不到對應的標註檔案: label/474_8_3.json
+處理影像: NG/474_8_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/474_9_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/474_9_2.json
+找不到對應的標註檔案: label/474_9_3.json
+處理影像: NG/474_9_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_0_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_0_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_0_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_0_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_10_1.json
+找不到對應的標註檔案: label/481_10_2.json
+找不到對應的標註檔案: label/481_10_3.json
+找不到對應的標註檔案: label/481_10_4.json
+處理影像: NG/481_11_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_11_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_11_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_11_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_12_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_12_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_12_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_12_4.json
+處理影像: NG/481_13_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_13_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_13_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_13_4.json
+處理影像: NG/481_14_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_14_2.json
+找不到對應的標註檔案: label/481_14_3.json
+處理影像: NG/481_14_4.jpg
+處理 NG/481_14_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_15_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_15_2.jpg
+處理 NG/481_15_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_15_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_15_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_16_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_16_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_16_3.json
+處理影像: NG/481_16_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_17_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_17_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_17_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_17_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_18_1.json
+處理影像: NG/481_18_2.jpg
+處理 NG/481_18_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/481_18_3.json
+處理影像: NG/481_18_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_19_1.json
+找不到對應的標註檔案: label/481_19_2.json
+找不到對應的標註檔案: label/481_19_3.json
+找不到對應的標註檔案: label/481_19_4.json
+處理影像: NG/481_1_1.jpg
+處理 NG/481_1_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/481_1_2.json
+找不到對應的標註檔案: label/481_1_3.json
+處理影像: NG/481_1_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_20_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_20_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_20_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_20_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_21_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_21_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_21_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_21_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_22_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_22_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_22_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_22_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_23_1.json
+找不到對應的標註檔案: label/481_23_2.json
+處理影像: NG/481_23_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_23_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_24_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_24_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_24_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_24_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_25_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_25_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_25_3.json
+找不到對應的標註檔案: label/481_25_4.json
+處理影像: NG/481_26_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_26_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_26_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_26_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_27_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_27_2.json
+處理影像: NG/481_27_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_27_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_28_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_28_2.json
+找不到對應的標註檔案: label/481_28_3.json
+找不到對應的標註檔案: label/481_28_4.json
+處理影像: NG/481_29_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_29_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_29_3.jpg
+處理 NG/481_29_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_29_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_2_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_2_2.json
+找不到對應的標註檔案: label/481_2_3.json
+找不到對應的標註檔案: label/481_2_4.json
+處理影像: NG/481_30_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_30_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_30_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_30_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_3_1.json
+找不到對應的標註檔案: label/481_3_2.json
+找不到對應的標註檔案: label/481_3_3.json
+找不到對應的標註檔案: label/481_3_4.json
+找不到對應的標註檔案: label/481_4_1.json
+找不到對應的標註檔案: label/481_4_2.json
+找不到對應的標註檔案: label/481_4_3.json
+找不到對應的標註檔案: label/481_4_4.json
+處理影像: NG/481_5_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_5_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_5_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_5_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_6_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/481_6_2.jpg
+處理 NG/481_6_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_6_3.jpg
+處理 NG/481_6_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_6_4.jpg
+處理 NG/481_6_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_7_1.jpg
+處理 NG/481_7_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_7_2.jpg
+處理 NG/481_7_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_7_3.jpg
+處理 NG/481_7_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_7_4.jpg
+處理 NG/481_7_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/481_8_1.json
+找不到對應的標註檔案: label/481_8_2.json
+處理影像: NG/481_8_3.jpg
+處理 NG/481_8_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/481_8_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/481_9_1.json
+找不到對應的標註檔案: label/481_9_2.json
+找不到對應的標註檔案: label/481_9_3.json
+找不到對應的標註檔案: label/481_9_4.json
+處理影像: NG/737_0_1.jpg
+處理 NG/737_0_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_0_2.jpg
+處理 NG/737_0_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_0_3.jpg
+處理 NG/737_0_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_0_4.jpg
+處理 NG/737_0_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/737_10_1.json
+找不到對應的標註檔案: label/737_10_2.json
+找不到對應的標註檔案: label/737_10_3.json
+找不到對應的標註檔案: label/737_10_4.json
+處理影像: NG/737_11_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_11_2.json
+處理影像: NG/737_11_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_11_4.json
+處理影像: NG/737_12_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_12_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_12_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_12_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_13_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_13_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_13_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_13_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_14_1.json
+找不到對應的標註檔案: label/737_14_2.json
+找不到對應的標註檔案: label/737_14_3.json
+找不到對應的標註檔案: label/737_14_4.json
+找不到對應的標註檔案: label/737_15_1.json
+找不到對應的標註檔案: label/737_15_2.json
+找不到對應的標註檔案: label/737_15_3.json
+處理影像: NG/737_15_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_16_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_16_2.jpg
+處理 NG/737_16_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_16_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_16_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_17_1.json
+處理影像: NG/737_17_2.jpg
+處理 NG/737_17_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/737_17_3.json
+找不到對應的標註檔案: label/737_17_4.json
+找不到對應的標註檔案: label/737_18_1.json
+找不到對應的標註檔案: label/737_18_2.json
+找不到對應的標註檔案: label/737_18_3.json
+找不到對應的標註檔案: label/737_18_4.json
+找不到對應的標註檔案: label/737_19_1.json
+找不到對應的標註檔案: label/737_19_2.json
+找不到對應的標註檔案: label/737_19_3.json
+找不到對應的標註檔案: label/737_19_4.json
+找不到對應的標註檔案: label/737_1_1.json
+處理影像: NG/737_1_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_1_3.json
+處理影像: NG/737_1_4.jpg
+處理 NG/737_1_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/737_20_1.json
+找不到對應的標註檔案: label/737_20_2.json
+處理影像: NG/737_20_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_20_4.json
+找不到對應的標註檔案: label/737_21_1.json
+找不到對應的標註檔案: label/737_21_2.json
+處理影像: NG/737_21_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_21_4.json
+找不到對應的標註檔案: label/737_22_1.json
+處理影像: NG/737_22_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_22_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_22_4.json
+找不到對應的標註檔案: label/737_23_1.json
+找不到對應的標註檔案: label/737_23_2.json
+找不到對應的標註檔案: label/737_23_3.json
+處理影像: NG/737_23_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_24_1.json
+找不到對應的標註檔案: label/737_24_2.json
+找不到對應的標註檔案: label/737_24_3.json
+找不到對應的標註檔案: label/737_24_4.json
+找不到對應的標註檔案: label/737_25_1.json
+找不到對應的標註檔案: label/737_25_2.json
+找不到對應的標註檔案: label/737_25_3.json
+找不到對應的標註檔案: label/737_25_4.json
+找不到對應的標註檔案: label/737_26_1.json
+找不到對應的標註檔案: label/737_26_2.json
+找不到對應的標註檔案: label/737_26_3.json
+找不到對應的標註檔案: label/737_26_4.json
+找不到對應的標註檔案: label/737_27_1.json
+找不到對應的標註檔案: label/737_27_2.json
+找不到對應的標註檔案: label/737_27_3.json
+找不到對應的標註檔案: label/737_27_4.json
+找不到對應的標註檔案: label/737_28_1.json
+找不到對應的標註檔案: label/737_28_2.json
+找不到對應的標註檔案: label/737_28_3.json
+找不到對應的標註檔案: label/737_28_4.json
+找不到對應的標註檔案: label/737_29_1.json
+找不到對應的標註檔案: label/737_29_2.json
+找不到對應的標註檔案: label/737_29_3.json
+處理影像: NG/737_29_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_2_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/737_2_2.json
+找不到對應的標註檔案: label/737_2_3.json
+找不到對應的標註檔案: label/737_2_4.json
+找不到對應的標註檔案: label/737_30_1.json
+找不到對應的標註檔案: label/737_30_2.json
+找不到對應的標註檔案: label/737_30_3.json
+找不到對應的標註檔案: label/737_30_4.json
+找不到對應的標註檔案: label/737_3_1.json
+找不到對應的標註檔案: label/737_3_2.json
+找不到對應的標註檔案: label/737_3_3.json
+找不到對應的標註檔案: label/737_3_4.json
+找不到對應的標註檔案: label/737_4_1.json
+找不到對應的標註檔案: label/737_4_2.json
+找不到對應的標註檔案: label/737_4_3.json
+找不到對應的標註檔案: label/737_4_4.json
+找不到對應的標註檔案: label/737_5_1.json
+找不到對應的標註檔案: label/737_5_2.json
+找不到對應的標註檔案: label/737_5_3.json
+處理影像: NG/737_5_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_6_1.jpg
+處理 NG/737_6_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_6_2.jpg
+處理 NG/737_6_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_6_3.jpg
+處理 NG/737_6_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_6_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/737_7_1.jpg
+處理 NG/737_7_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/737_7_2.json
+處理影像: NG/737_7_3.jpg
+處理 NG/737_7_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/737_7_4.jpg
+處理 NG/737_7_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/737_8_1.json
+找不到對應的標註檔案: label/737_8_2.json
+找不到對應的標註檔案: label/737_8_3.json
+找不到對應的標註檔案: label/737_8_4.json
+找不到對應的標註檔案: label/737_9_1.json
+找不到對應的標註檔案: label/737_9_2.json
+找不到對應的標註檔案: label/737_9_3.json
+找不到對應的標註檔案: label/737_9_4.json
+處理影像: NG/941_0_1.jpg
+處理 NG/941_0_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/941_0_2.json
+處理影像: NG/941_0_3.jpg
+處理 NG/941_0_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_0_4.jpg
+處理 NG/941_0_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_10_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_10_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_10_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_10_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_11_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_11_2.jpg
+處理 NG/941_11_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_11_3.jpg
+處理 NG/941_11_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_11_4.jpg
+處理 NG/941_11_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_12_1.jpg
+處理 NG/941_12_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_12_2.jpg
+處理 NG/941_12_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_12_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_12_4.jpg
+處理 NG/941_12_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_13_1.jpg
+處理 NG/941_13_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_13_2.jpg
+處理 NG/941_13_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_13_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_13_4.jpg
+處理 NG/941_13_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_14_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_14_2.jpg
+處理 NG/941_14_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_14_3.jpg
+處理 NG/941_14_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_14_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_15_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_15_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_15_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_15_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_16_1.jpg
+處理 NG/941_16_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_16_2.jpg
+處理 NG/941_16_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_16_3.jpg
+處理 NG/941_16_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_16_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_17_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_17_2.jpg
+處理 NG/941_17_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_17_3.jpg
+處理 NG/941_17_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_17_4.jpg
+處理 NG/941_17_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_18_1.jpg
+處理 NG/941_18_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_18_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_18_3.jpg
+處理 NG/941_18_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_18_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_19_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_19_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_19_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_19_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_1_1.jpg
+處理 NG/941_1_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_1_2.jpg
+處理 NG/941_1_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_1_3.jpg
+處理 NG/941_1_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_1_4.jpg
+處理 NG/941_1_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_20_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_20_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_20_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_20_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_21_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_21_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_21_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_21_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_22_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_22_2.jpg
+處理 NG/941_22_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_22_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_22_4.jpg
+處理 NG/941_22_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_23_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_23_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_23_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_23_4.jpg
+處理 NG/941_23_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_24_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_24_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_24_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_24_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_25_1.jpg
+處理 NG/941_25_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_25_2.jpg
+處理 NG/941_25_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_25_3.jpg
+處理 NG/941_25_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_25_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_26_1.jpg
+處理 NG/941_26_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_26_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_26_3.jpg
+處理 NG/941_26_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_26_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_27_1.jpg
+處理 NG/941_27_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_27_2.jpg
+處理 NG/941_27_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_27_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_27_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_28_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_28_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_28_3.jpg
+處理 NG/941_28_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_28_4.jpg
+處理 NG/941_28_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_29_1.jpg
+處理 NG/941_29_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_29_2.jpg
+處理 NG/941_29_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_29_3.jpg
+處理 NG/941_29_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_29_4.jpg
+處理 NG/941_29_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+找不到對應的標註檔案: label/941_2_1.json
+處理影像: NG/941_2_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/941_2_3.json
+處理影像: NG/941_2_4.jpg
+處理 NG/941_2_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_30_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_30_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_30_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_30_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/941_3_1.json
+找不到對應的標註檔案: label/941_3_2.json
+找不到對應的標註檔案: label/941_3_3.json
+找不到對應的標註檔案: label/941_3_4.json
+找不到對應的標註檔案: label/941_4_1.json
+處理影像: NG/941_4_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+找不到對應的標註檔案: label/941_4_3.json
+找不到對應的標註檔案: label/941_4_4.json
+找不到對應的標註檔案: label/941_5_1.json
+處理影像: NG/941_5_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_5_3.jpg
+處理 NG/941_5_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_5_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_6_1.jpg
+處理 NG/941_6_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_6_2.jpg
+處理 NG/941_6_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_6_3.jpg
+處理 NG/941_6_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_6_4.jpg
+處理 NG/941_6_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_7_1.jpg
+處理 NG/941_7_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_7_2.jpg
+處理 NG/941_7_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_7_3.jpg
+處理 NG/941_7_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_7_4.jpg
+處理 NG/941_7_4.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_8_1.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_8_2.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_8_3.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_8_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理影像: NG/941_9_1.jpg
+處理 NG/941_9_1.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_9_2.jpg
+處理 NG/941_9_2.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_9_3.jpg
+處理 NG/941_9_3.jpg 時發生錯誤: A linearring requires at least 4 coordinates.
+處理影像: NG/941_9_4.jpg
+完成切割，共產生 16 個小圖
+可視化圖片已儲存至: output/visualization
+處理完成！共處理了 221 個影像檔案
