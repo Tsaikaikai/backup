@@ -67,3 +67,36 @@ Halcon3DLibrary 夾在核心引擎與 HALCON SDK 之間，
 說明重點：引擎完全不知道清單裡裝的是哪種工具，
 只會逐一呼叫 .Execute()，這是「介面設計」帶來的彈性。
 未來新增第三、四種量測方式，引擎程式碼零修改。
+
+
+using Halcon3DLibrary;
+using HalconDotNet;
+
+// ── 1. 準備點雲與對位資料（實際專案由相機與 Alignment 提供）──────────
+HObjectModel3D sceneCloud = new HObjectModel3D(); // 相機給的點雲
+HPose alignmentPose = new HPose();               // Alignment.RunMatching() 給的 Pose
+
+// ── 2. 建立工具清單，使用者在 UI 上排好幾個就放幾個 ────────────────────
+List<IMeasureTool> tools = new List<IMeasureTool>
+{
+    new MeasurementLineToLine(),   // 工具 1
+    new MeasurementPointToLine(),  // 工具 2
+    // 未來新增工具 3、4... 只要加在這裡，下面的迴圈完全不用動
+};
+
+// ── 3. 核心引擎：逐一執行，顯示結果 ────────────────────────────────────
+foreach (IMeasureTool tool in tools)
+{
+    MeasureResult result = tool.Execute(sceneCloud, alignmentPose);
+
+    if (result.IsSuccess)
+    {
+        Console.WriteLine($"[{tool.ToolName}] 距離 = {result.Distance:F3} mm");
+        // 實際專案：把 result.Distance 更新到 WPF UI 的對應欄位
+    }
+    else
+    {
+        Console.WriteLine($"[{tool.ToolName}] 量測失敗：{result.ErrorMessage}");
+        // 可選擇 break（中止後續）或 continue（跳過繼續跑）
+    }
+}
