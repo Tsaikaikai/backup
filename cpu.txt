@@ -1,0 +1,39 @@
+[1/8] ▶ 執行 1. DepthImageLoader
+    載入深度圖 → ctx.DepthImage
+    [11:02:44.992] DepthImageLoader：ctx.DepthImage  3200×2000  從 D:/Johnny/Measure3D/MeasureApp/bin/Debug/net48/sample.tif
+    ✓ 成功  輸出: [DepthImage]  耗時: 21 ms
+
+[2/8] ▶ 執行 2. DepthImageFilter (Gaussian)
+    濾波 → ctx.FilteredDepthImage
+    [11:02:45.003] DepthImageFilter：Gaussian MaskSize=5 → ctx.FilteredDepthImage
+    ✓ 成功  輸出: [FilteredDepthImage]  耗時: 5 ms
+
+[3/8] ▶ 執行 3. Shape25DAlignment
+    2.5D 對位 → ctx.CurrentPose + ctx.AlignedCloud
+    [11:02:45.189] Shape25DAlignment：成功，分數 0.989，Pose=(X=107.428, Y=52.702, Z=0.001, Rz=0.00°)，AlignedCloud=2305788 點 → AlignedCloud
+    ✓ 成功  輸出: [CurrentPose, AlignedCloud]  耗時: 179 ms
+
+[4/8] ▶ 執行 4a. RegionSelectorBox (Line1_ROI)
+    切左半邊 ROI
+    [11:02:45.267] RegionSelectorBox：Line1_ROI 取得 347304 點
+    ✓ 成功  輸出: [Line1_ROI]  耗時: 72 ms
+
+[5/8] ▶ 執行 4b. RegionSelectorBox (Line2_ROI)
+    切右半邊 ROI
+    [11:02:45.361] RegionSelectorBox：Line2_ROI 取得 401196 點
+    ✓ 成功  輸出: [Line2_ROI]  耗時: 89 ms
+
+[6/8] ▶ 執行 5a. LineFitter (Line1)
+    擬合第一條線
+    [11:02:45.435] LineFitter：Line1  點=(154.3244,50.0748,0.0000) mm  方向=(0.0000,1.0000,0.0000)  [ForceXY, λ₁/λ₂=131.6]
+    ✓ 成功  輸出: [Line1]  耗時: 67 ms
+
+[7/8] ▶ 執行 5b. LineFitter (Line2)
+    擬合第二條線
+    [11:02:45.530] LineFitter：Line2  點=(125.0010,50.0748,0.0000) mm  方向=(0.0000,1.0000,0.0000)  [ForceXY, λ₁/λ₂=98.6]
+    ✓ 成功  輸出: [Line2]  耗時: 90 ms
+
+[8/8] ▶ 執行 6. MeasureLineToLine3D
+    量測兩線距離 → ctx.MeasureResults["Dist_L2L"]
+    [11:02:45.536] MeasureLineToLine3D：Dist_L2L = 29.3235 mm
+    ✓ 成功  輸出: [Dist_L2L]  耗時: 0 ms
