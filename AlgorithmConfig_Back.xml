@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<CAlgorithmConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ImageWidth>3648</ImageWidth>
+  <ImageHeight>5472</ImageHeight>
+  <PCBNumber>1</PCBNumber>
+  <PCBHeight>5300</PCBHeight>
+  <TopAlignGoldenPath>.\AlignData\Align_top_right.bmp</TopAlignGoldenPath>
+  <Scale>0.5</Scale>
+  <BtmAlignGoldenPath>.\AlignData\Align_btm_right.bmp</BtmAlignGoldenPath>
+  <MatchRegionRate>0.2</MatchRegionRate>
+  <AlignSearchRegionSize>896</AlignSearchRegionSize>
+  <ExpandTop>20</ExpandTop>
+  <ExpandRight>0</ExpandRight>
+  <ExpandBottom>20</ExpandBottom>
+  <ExpandLeft>1280</ExpandLeft>
+  <ExpandCropY>640</ExpandCropY>
+  <AlignSearchOverlap>0.5</AlignSearchOverlap>
+  <ToleranceAngle>5</ToleranceAngle>
+  <MatchMinScore>0.7</MatchMinScore>
+  <MinReduceArea>128</MinReduceArea>
+  <MaxOverlap>0</MaxOverlap>
+  <Buffer>128</Buffer>
+  <AIModelPath>.\20251211_PCB.onnx</AIModelPath>
+  <UseGPU>0</UseGPU>
+  <BatchSize>7</BatchSize>
+  <AIInputSize>640</AIInputSize>
+  <OverlapRate>0</OverlapRate>
+  <CDThreshold>-1</CDThreshold>
+  <CutNumHeight>7</CutNumHeight>
+  <CutNumWidth>2</CutNumWidth>
+  <MinArea>50</MinArea>
+  <Kernel>3</Kernel>
+  <Thickness>5</Thickness>
+</CAlgorithmConfig>
